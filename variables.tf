@@ -16,8 +16,8 @@ EOT
     location                = string
     name                    = string
     resource_group_name     = string
-    idle_timeout_in_minutes = optional(number, 4)
-    sku_name                = optional(string, "Standard")
+    idle_timeout_in_minutes = optional(number) # Default: 4
+    sku_name                = optional(string) # Default: "Standard"
     tags                    = optional(map(string))
     zones                   = optional(set(string))
   }))
