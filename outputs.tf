@@ -1,3 +1,7 @@
+output "nat_gateways_id" {
+  description = "Map of id values across all nat_gateways, keyed the same as var.nat_gateways"
+  value       = { for k, v in azurerm_nat_gateway.nat_gateways : k => v.id }
+}
 output "nat_gateways_idle_timeout_in_minutes" {
   description = "Map of idle_timeout_in_minutes values across all nat_gateways, keyed the same as var.nat_gateways"
   value       = { for k, v in azurerm_nat_gateway.nat_gateways : k => v.idle_timeout_in_minutes }
